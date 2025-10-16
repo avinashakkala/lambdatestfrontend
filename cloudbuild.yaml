@@ -12,3 +12,6 @@ steps:
     args: ['app', 'deploy', '--quiet']
 
 timeout: '1200s'  # 20 minutes timeout
+
+options:
+  logging: CLOUD_LOGGING_ONLY
