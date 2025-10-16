@@ -7,11 +7,12 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
 
-  # Step 3: Deploy to App Engine
-  - name: 'gcr.io/google-appengine/gcloud'
+  # Step 3: Deploy to App Engine using Cloud SDK
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
     args: ['app', 'deploy', '--quiet']
 
-timeout: '1200s'  # 20 minutes timeout
+timeout: '1200s'
 
 options:
   logging: CLOUD_LOGGING_ONLY
